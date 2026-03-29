@@ -1,8 +1,8 @@
 class LibrarySearch < Formula
   desc "Local semantic search for your personal book collection"
   homepage "https://github.com/paraped/library-search"
-  url "https://github.com/paraped/library-search/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "099337e8f59d9b6a8e2443d701be3ae8636cbe9eab9807b8e3afdacfade08b72"
+  url "https://github.com/paraped/library-search/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "ccf17f0d7e5bb703ddf0ca8bb4d1067368eb44fa9df84f9304df19096e800a49"
   license "MIT"
 
   depends_on "uv"
