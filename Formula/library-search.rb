@@ -39,7 +39,7 @@ class LibrarySearch < Formula
     # persistent Python cache (~/.local/share/uv/python) instead.
     rm_rf libexec/".venv"
     system Formula["uv"].opt_bin/"uv", "sync", "--project", libexec.to_s,
-           "--no-dev", "--frozen"
+           "--no-dev", "--frozen", "--python", "3.13"
   end
 
   def caveats
