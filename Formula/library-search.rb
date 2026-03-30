@@ -33,6 +33,13 @@ class LibrarySearch < Formula
   def post_install
     # Create default books directory
     (Path.home/"Book_Library").mkpath
+
+    # The venv's python symlink was built against Homebrew's sandbox temp dir
+    # which is deleted after install. Rebuild the venv in-place so uv uses its
+    # persistent Python cache (~/.local/share/uv/python) instead.
+    rm_rf libexec/".venv"
+    system Formula["uv"].opt_bin/"uv", "sync", "--project", libexec.to_s,
+           "--no-dev", "--frozen"
   end
 
   def caveats
